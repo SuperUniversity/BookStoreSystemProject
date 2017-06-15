@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bb0783b7856544f9a9472b3fce1a0c18" Name="Diagram1">
+        <EntityTypeShape EntityType="SuperUniversityModel.Author" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SuperUniversityModel.Book" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SuperUniversityModel.Customer" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SuperUniversityModel.MainCategory" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="SuperUniversityModel.Order" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SuperUniversityModel.OrderDetail" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SuperUniversityModel.Publisher" Width="1.5" PointX="6.75" PointY="4.75" />
+        <EntityTypeShape EntityType="SuperUniversityModel.SubCategory" Width="1.5" PointX="2.75" PointY="7.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
