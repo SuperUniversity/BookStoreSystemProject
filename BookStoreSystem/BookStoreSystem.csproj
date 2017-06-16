@@ -187,6 +187,7 @@
     </Compile>
     <Compile Include="Areas\BookStoreAreas\ViewModels\ViewModel_BookInfo.cs" />
     <Compile Include="Areas\BookStoreAreas\ViewModels\ViewModel_BookInformation.cs" />
+    <Compile Include="Areas\BookStoreAreas\ViewModels\ViewModel_CustomerLogin.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

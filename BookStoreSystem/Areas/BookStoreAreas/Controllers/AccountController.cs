@@ -1,4 +1,5 @@
 ﻿using BookStoreSystem.Areas.BookStoreAreas.Models;
+using BookStoreSystem.Areas.BookStoreAreas.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,15 +37,15 @@ namespace BookStoreSystem.Areas.BookStoreAreas.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //public ActionResult CustomerLogin(Customer customer)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        var LoginUser =db_Customer.GetAll().FirstOrDefault(user)
-        //    }
-        //    return View();
-        //}
+        [HttpPost]
+        public ActionResult CustomerLogin(ViewModel_CustomerLogin vm_CustomerLogin)
+        {
+            if (ModelState.IsValid)
+            {
+                var LoginUser = db_Customer.GetAll().FirstOrDefault(customer => customer.Account == vm_CustomerLogin.Account && customer.Password == vm_CustomerLogin.Password);
+            }
+            return View();
+        }
 
     }
 }

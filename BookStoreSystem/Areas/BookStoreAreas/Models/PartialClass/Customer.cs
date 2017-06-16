@@ -18,14 +18,14 @@ namespace BookStoreSystem.Areas.BookStoreAreas.Models
             [Required(ErrorMessage = "請輸入姓名")]
             public string FullName { get; set; }
             [DisplayName("暱稱")]
-            [Required(ErrorMessage = "請輸入姓名暱稱")]
+            [Required(ErrorMessage = "請輸入暱稱")]
             public string NickName { get; set; }
             [DisplayName("帳號")]
-            [Required(ErrorMessage = "請輸入姓名帳號")]
+            [Required(ErrorMessage = "請輸入帳號")]
             public string Account { get; set; }
             [DisplayName("密碼")]
             [DataType(DataType.Password)]
-            [Required(ErrorMessage = "請輸入姓名密碼")]
+            [Required(ErrorMessage = "請輸入密碼")]
             public string Password { get; set; }
             [DisplayName("Email")]
             [DataType(DataType.EmailAddress)]
