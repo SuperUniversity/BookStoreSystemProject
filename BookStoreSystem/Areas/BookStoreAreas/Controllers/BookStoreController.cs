@@ -157,6 +157,6 @@ namespace BookStoreSystem.Areas.BookStoreAreas.Controllers
 
             return View(Book);
         }
-        // 2017 OK
+        // 2017 in class
     }
 }
