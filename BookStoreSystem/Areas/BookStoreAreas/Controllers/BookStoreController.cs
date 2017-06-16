@@ -202,6 +202,7 @@ namespace BookStoreSystem.Areas.BookStoreAreas.Controllers
             //return View();
             return RedirectToAction("BookEdit", "BookStore", new { Area = "BookStoreAreas", errorstring = "請至少選擇一張商品圖片" });  //回到 [HttpGet] BookInsert
             //return View();   //Todo..... RedirectToAction會清空所填資料
+            //0616
         }
     }
 }
