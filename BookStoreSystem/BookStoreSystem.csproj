@@ -126,6 +126,8 @@
     <Content Include="Areas\BookStoreAreas\Views\BookStore\BookInsert.cshtml" />
     <Content Include="Areas\BookStoreAreas\Views\BookStore\Book_MainCategories_PartialView.cshtml" />
     <Content Include="Areas\BookStoreAreas\Views\BookStore\BookEdit.cshtml" />
+    <Content Include="Areas\BookStoreAreas\Views\Account\CustomerRegister.cshtml" />
+    <Content Include="Areas\BookStoreAreas\Views\Account\CustomerLogin.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -135,6 +137,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\BookStoreAreas\BookStoreAreasAreaRegistration.cs" />
+    <Compile Include="Areas\BookStoreAreas\Controllers\AccountController.cs" />
     <Compile Include="Areas\BookStoreAreas\Controllers\AdminController.cs" />
     <Compile Include="Areas\BookStoreAreas\Controllers\BookStoreController.cs" />
     <Compile Include="Areas\BookStoreAreas\Controllers\CustomerController.cs" />
@@ -173,6 +176,7 @@
       <DependentUpon>BookStoreSystemModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\BookStoreAreas\Models\PartialClass\Book.cs" />
+    <Compile Include="Areas\BookStoreAreas\Models\PartialClass\Customer.cs" />
     <Compile Include="Areas\BookStoreAreas\Models\PartialClass\Publisher.cs" />
     <Compile Include="Areas\BookStoreAreas\Models\Publisher.cs">
       <DependentUpon>BookStoreSystemModel.tt</DependentUpon>
@@ -183,7 +187,6 @@
     </Compile>
     <Compile Include="Areas\BookStoreAreas\ViewModels\ViewModel_BookInfo.cs" />
     <Compile Include="Areas\BookStoreAreas\ViewModels\ViewModel_BookInformation.cs" />
-    <Compile Include="Areas\BookStoreAreas\ViewModels\ViewModel_Publisher.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

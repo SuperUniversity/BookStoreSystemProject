@@ -8,7 +8,7 @@
     <h2 style="font-family:'Microsoft JhengHei';font-weight:bold"><span style="color:orangered">商品上架</span>資料修改</h2>
     <hr />
 
-    @using (Html.BeginForm("BookInsert", "BookStore", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+    @using (Html.BeginForm("BookEdit", "BookStore", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
     {
         @Html.HiddenFor(book => book.BookID)
 

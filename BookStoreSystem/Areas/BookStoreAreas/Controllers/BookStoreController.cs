@@ -143,12 +143,16 @@ namespace BookStoreSystem.Areas.BookStoreAreas.Controllers
         }
 
         [HttpGet]
-        public ActionResult BookEdit(int id = 0)
+        public ActionResult BookEdit(int id = 0, string errorstring = "")
         {
             //ViewModel_BookInformation vm_book = new ViewModel_BookInformation();
             //vm_book.books = db_Book.GetAll();
             //vm_book.subCategories = db_SubCategory.GetAll().Where(book => book.SubCategoryID == id);
             ////vm_book.mainCategories = db_MainCategory.GetAll().Where(book =>book.MainCategoryID==)
+            if (errorstring != "")
+            {
+                ViewBag.Message = "請至少選擇一張商品圖片";
+            }
 
             Book Book = db_Book.GetByID(id);
             ViewBag.subCategory = db_SubCategory.GetAll();
@@ -157,6 +161,47 @@ namespace BookStoreSystem.Areas.BookStoreAreas.Controllers
 
             return View(Book);
         }
-        // 2017 in class
+
+        [HttpPost]
+        public ActionResult BookEdit(Book Book, Author Author, MainCategory MainCategory, SubCategory SubCategory, HttpPostedFileBase Image1, HttpPostedFileBase Image2, HttpPostedFileBase Image3)
+        {
+            if (Image1 != null)
+            {
+                string strPath1 = Request.PhysicalApplicationPath + @"Areas/BookStoreAreas/BookImages/" + Image1.FileName;
+                Image1.SaveAs(strPath1);
+                var imgSize1 = Image1.ContentLength;
+                byte[] imgByte1 = new byte[imgSize1];
+                Image1.InputStream.Read(imgByte1, 0, imgSize1);
+                Book.Image1 = Image1.FileName;
+                Book.BytesImage1 = imgByte1;
+
+                if (Image2 != null)
+                {
+                    string strPath2 = Request.PhysicalApplicationPath + @"Areas/BookStoreAreas/BookImages/" + Image2.FileName;
+                    Image2.SaveAs(strPath2);
+                    var imgSize2 = Image2.ContentLength;
+                    byte[] imgByte2 = new byte[imgSize2];
+                    Image2.InputStream.Read(imgByte2, 0, imgSize2);
+                    Book.Image2 = Image2.FileName;
+                    Book.BytesImage2 = imgByte2;
+                }
+                if (Image3 != null)
+                {
+                    string strPath3 = Request.PhysicalApplicationPath + @"Areas/BookStoreAreas/BookImages/" + Image3.FileName;
+                    Image3.SaveAs(strPath3);
+                    var imgSize3 = Image3.ContentLength;
+                    byte[] imgByte3 = new byte[imgSize3];
+                    Image3.InputStream.Read(imgByte3, 0, imgSize3);
+                    Book.Image3 = Image3.FileName;
+                    Book.BytesImage3 = imgByte3;
+                }
+                db_Book.Update(Book);
+                return RedirectToAction("BookIndex", "BookStore", new { Area = "BookStoreAreas" });
+            }
+
+            //return View();
+            return RedirectToAction("BookEdit", "BookStore", new { Area = "BookStoreAreas", errorstring = "請至少選擇一張商品圖片" });  //回到 [HttpGet] BookInsert
+            //return View();   //Todo..... RedirectToAction會清空所填資料
+        }
     }
 }

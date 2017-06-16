@@ -30,10 +30,6 @@ namespace BookStoreSystem.Areas.BookStoreAreas.Controllers
         {
             Publisher publisher = db_Publisher.GetByID(id);
             return View(publisher);
-            //ViewModel_Publisher vm = new ViewModel_Publisher();
-            //ViewBag.PublisherDatas = db_Publisher.GetAll();
-            //return(vm.find)
-            ////
         }
 
         [HttpPost]                                         //Post:後台管理者 修改廠商資料
