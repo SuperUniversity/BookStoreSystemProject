@@ -91,5 +91,11 @@ namespace BookStoreSystem.Areas.BookStoreAreas.Controllers
 
         //    return View(result.ToList());
         //}
+
+        public ActionResult CustomerProfile()
+        {
+            return View();
+        }
+        //
     }
 }
