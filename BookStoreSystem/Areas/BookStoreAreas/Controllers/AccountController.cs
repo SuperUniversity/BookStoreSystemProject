@@ -26,7 +26,7 @@ namespace BookStoreSystem.Areas.BookStoreAreas.Controllers
             if (ModelState.IsValid)
             {
                 db_Customer.Create(customer);
-                return RedirectToAction("BookStoreLogin", "Account", new { Area = "BookStoreAreas" });
+                return RedirectToAction("CustomerLogin", "Account", new { Area = "BookStoreAreas" });
             }
             return View();
         }
@@ -43,7 +43,24 @@ namespace BookStoreSystem.Areas.BookStoreAreas.Controllers
             if (ModelState.IsValid)
             {
                 var LoginUser = db_Customer.GetAll().FirstOrDefault(customer => customer.Account == vm_CustomerLogin.Account && customer.Password == vm_CustomerLogin.Password);
+                if (LoginUser != null)
+                {
+                    Response.Cookies["Account"].Value = LoginUser.Account;
+                    Response.Cookies["FullName"].Value = HttpUtility.UrlEncode(LoginUser.FullName);
+                    Response.Cookies["CustomerID"].Value = LoginUser.CustomerID.ToString();
+                    Response.Cookies["NickName"].Value = HttpUtility.UrlEncode(LoginUser.NickName);
+                    if (vm_CustomerLogin.RememberMe)
+                    {
+                        Response.Cookies["Account"].Expires = DateTime.Now.AddDays(3);
+                        Response.Cookies["FullName"].Expires = DateTime.Now.AddDays(3);
+                        Response.Cookies["CustomerID"].Expires = DateTime.Now.AddDays(3);
+                        Response.Cookies["NickName"].Expires = DateTime.Now.AddDays(3);
+
+                    }
+                    return RedirectToAction("CustomerProfile", "Customer", new { Area = "BookStoreAreas" });
+                }
             }
+            ViewBag.error = "帳號或密碼錯誤";
             return View();
         }
 
