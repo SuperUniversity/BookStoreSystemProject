@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\BookStoreSystem",
+    "\\BookStoreSystem\\Areas",
+    "\\BookStoreSystem\\Areas\\BookStoreAreas",
+    "\\BookStoreSystem\\Areas\\BookStoreAreas\\Controllers",
+    "\\BookStoreSystem\\Areas\\BookStoreAreas\\Views",
+    "\\BookStoreSystem\\Areas\\BookStoreAreas\\Views\\Customer"
+  ],
+  "SelectedNode": "\\BookStoreSystem\\Areas\\BookStoreAreas\\Controllers\\CustomerController.cs",
+  "PreviewInSolutionExplorer": false
+}
