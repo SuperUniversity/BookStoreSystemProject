@@ -128,7 +128,6 @@
     <Content Include="Areas\BookStoreAreas\Views\BookStore\BookEdit.cshtml" />
     <Content Include="Areas\BookStoreAreas\Views\Account\CustomerRegister.cshtml" />
     <Content Include="Areas\BookStoreAreas\Views\Account\CustomerLogin.cshtml" />
-    <Content Include="Areas\BookStoreAreas\Views\Customer\CustomerProfile.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
