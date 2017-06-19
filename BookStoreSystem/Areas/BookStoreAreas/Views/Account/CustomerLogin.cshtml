@@ -4,6 +4,25 @@
     ViewBag.Title = "CustomerLogin";
 }
 
+@section styles{
+    <style>
+    .barfont {
+        font-size: 18px;
+        font-family: 'Microsoft JhengHei';
+        font-weight: bold;
+    }
+    </style>
+    }
+
+<div class="container">
+    <ul class="breadcrumb barfont">
+        <li>@Html.ActionLink("商城首頁", "Browse", "Customer", new { area = "BookStoreAreas" }, null)</li>
+        <li style="float:right">@Html.ActionLink("廠商註冊", "CustomerLogin", "Account", new { area = "BookStoreAreas" }, null)</li>
+        <li style="float:right">@Html.ActionLink("廠商登入", "CustomerLogin", "Account", new { area = "BookStoreAreas" }, null)</li>
+        <li style="float:right">@Html.ActionLink("會員註冊", "CustomerRegister", "Account", new { area = "BookStoreAreas" }, null)</li>
+        <li style="float:right">@Html.ActionLink("會員登入", "CustomerLogin", "Account", new { area = "BookStoreAreas" }, null)</li>
+</ul>
+</div>
 
 <div class="container">
     <h2 style="font-family:'Microsoft JhengHei';font-weight:bold;font-size:24px;"><span style="color:orangered">會員</span>登入</h2>
