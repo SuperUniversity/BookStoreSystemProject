@@ -1,15 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="SuperUniversityModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityContainer Name="SuperUniversityEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Author" EntityType="SuperUniversityModel.Author" />
-    <EntitySet Name="Book" EntityType="SuperUniversityModel.Book" />
-    <EntitySet Name="Customer" EntityType="SuperUniversityModel.Customer" />
-    <EntitySet Name="MainCategory" EntityType="SuperUniversityModel.MainCategory" />
-    <EntitySet Name="Order" EntityType="SuperUniversityModel.Order" />
-    <EntitySet Name="OrderDetail" EntityType="SuperUniversityModel.OrderDetail" />
-    <EntitySet Name="Publisher" EntityType="SuperUniversityModel.Publisher" />
-    <EntitySet Name="SubCategory" EntityType="SuperUniversityModel.SubCategory" />
-  </EntityContainer>
+<Schema Namespace="superuniversityModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="Author">
     <Key>
       <PropertyRef Name="AuthorID" />
@@ -22,14 +12,14 @@
       <PropertyRef Name="BookID" />
     </Key>
     <Property Name="BookID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="BookName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BookName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="SubCategoryID" Type="Int32" Nullable="false" />
     <Property Name="AuthorID" Type="Int32" Nullable="false" />
     <Property Name="PublisherID" Type="Int32" Nullable="false" />
     <Property Name="PublishDate" Type="DateTime" Precision="0" />
     <Property Name="Language" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="ListPrice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-    <Property Name="SalePrice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="ListPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="SalePrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
     <Property Name="BookDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="AuthorDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="OtherImformation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -47,10 +37,10 @@
       <PropertyRef Name="CustomerID" />
     </Key>
     <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="FullName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="NickName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Account" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Account" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -63,7 +53,7 @@
       <PropertyRef Name="MainCategoryID" />
     </Key>
     <Property Name="MainCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="MainCategoryName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MainCategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
   <EntityType Name="Order">
     <Key>
@@ -86,14 +76,14 @@
     <Property Name="OrderID" Type="Int32" Nullable="false" />
     <Property Name="BookID" Type="Int32" Nullable="false" />
     <Property Name="Quantity" Type="Int32" Nullable="false" />
-    <Property Name="UnitPrice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
   </EntityType>
   <EntityType Name="Publisher">
     <Key>
       <PropertyRef Name="PublisherID" />
     </Key>
     <Property Name="PublisherID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="PublisherName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PublisherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="PublisherUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="PublisherPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="PublisherAdress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -105,7 +95,17 @@
       <PropertyRef Name="SubCategoryID" />
     </Key>
     <Property Name="SubCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="SubCategoryName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SubCategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="MainCategoryID" Type="Int32" Nullable="false" />
   </EntityType>
+  <EntityContainer Name="superuniversityEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Author" EntityType="Self.Author" />
+    <EntitySet Name="Book" EntityType="Self.Book" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" />
+    <EntitySet Name="MainCategory" EntityType="Self.MainCategory" />
+    <EntitySet Name="Order" EntityType="Self.Order" />
+    <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" />
+    <EntitySet Name="Publisher" EntityType="Self.Publisher" />
+    <EntitySet Name="SubCategory" EntityType="Self.SubCategory" />
+  </EntityContainer>
 </Schema>

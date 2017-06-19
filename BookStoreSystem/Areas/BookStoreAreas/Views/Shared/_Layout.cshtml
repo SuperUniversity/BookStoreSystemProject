@@ -52,20 +52,24 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                @*<ul class="nav navbar-nav navbar-right">
-                        <li class="hidden">
-                            <a href="#page-top"></a>
-                        </li>
-                        <li class="page-scroll">
-                            <a href="#portfolio" style="color:white">模塊</a>
-                        </li>
-                        <li class="page-scroll">
-                            <a href="#about" style="color:white">關於</a>
-                        </li>
-                        <li class="page-scroll">
-                            <a href="#contact" style="color:white">聯絡我們</a>
-                        </li>
-                    </ul>*@
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="@Url.Action("Cart","Account")"><span class="glyphicon glyphicon-shopping-cart"></span>購物車</a>
+                    </li>
+                    <li>
+                        @{
+                            if (Request.Cookies["Account"] == null)
+                            {
+                                @Html.ActionLink("登入", "CustomerLogin", "Account", null, new { @class = "glyphicon glyphicon-user" });
+                            }
+                            else
+                            {
+                                @Html.ActionLink(Request.Cookies["Account"].Value+" / "+ HttpUtility.UrlDecode(Request.Cookies["FullName"].Value) +"("+ HttpUtility.UrlDecode(Request.Cookies["NickName"].Value) +")"+ " 登出", "Logout", "Account", null, new { @class = "glyphicon glyphicon-user" });                            }
+
+                        }
+                    </li>
+
+                </ul>
 
             </div>
             <!-- /.navbar-collapse -->

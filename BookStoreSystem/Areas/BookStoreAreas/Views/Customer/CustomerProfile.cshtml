@@ -4,4 +4,30 @@
 }
 
 <h2>CustomerProfile</h2>
+<div class="container">
+    <h2 style="font-family:'Microsoft JhengHei';font-weight:bold;font-size:24px;"><span style="color:orangered">@HttpUtility.UrlDecode(Request.Cookies["FullName"].Value)</span>/會員管理</h2>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>密碼:</dt>
+        <dd>
+            [
+            @if (Request.Cookies["CustomerID"].Value != null)
+            {
+                if (int.Parse(Request.Cookies["CustomerID"].Value) > 0)
+                {
+                    @Html.ActionLink("變更密碼", "ChangePassword", "Manager", new { id = Request.Cookies["CustomerID"].Value }, new { })
+                }
+                else if (int.Parse(Request.Cookies["CustomerID"].Value) < 0)
+                {
+                    @Html.ActionLink("變更密碼", "ChangePassword", "Manager", new { id = Request.Cookies["CustomerID"].Value }, new { })
+                }
 
+            }
+            else
+            {
+                @Html.ActionLink("建立", "SetPassword")
+            }
+            ]
+        </dd>
+    </dl>
+</div>

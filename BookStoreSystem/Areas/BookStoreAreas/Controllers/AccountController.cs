@@ -61,8 +61,20 @@ namespace BookStoreSystem.Areas.BookStoreAreas.Controllers
                 }
             }
             ViewBag.error = "帳號或密碼錯誤";
-            return View();////
+            return View();
         }
+
+        public ActionResult Logout()
+        {
+            Response.Cookies["Account"].Expires = DateTime.Now.AddSeconds(-1);
+            Response.Cookies["FullName"].Expires = DateTime.Now.AddSeconds(-1);
+            Response.Cookies["CustomerID"].Expires = DateTime.Now.AddSeconds(-1);
+            Response.Cookies["NickName"].Expires = DateTime.Now.AddSeconds(-1);
+
+            Session.Abandon();
+            return RedirectToAction("Browse", "Customer", new { Area = "BookStoreAreas" });
+        }
+
 
     }
 }

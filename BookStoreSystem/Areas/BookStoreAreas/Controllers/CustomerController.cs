@@ -16,8 +16,9 @@ namespace BookStoreSystem.Areas.BookStoreAreas.Controllers
         private IRepository_BookStoreSystemModel<Book> db_Book = new Repository_BookStoreSystemModel<Book>();
         private IRepository_BookStoreSystemModel<SubCategory> db_SubCategory = new Repository_BookStoreSystemModel<SubCategory>();
         private IRepository_BookStoreSystemModel<Publisher> db_Publisher = new Repository_BookStoreSystemModel<Publisher>();
+        private IRepository_BookStoreSystemModel<Customer> db_Customer = new Repository_BookStoreSystemModel<Customer>();
 
-        private SuperUniversityEntities _entity = new SuperUniversityEntities();
+        private superuniversityEntities _entity = new superuniversityEntities();
 
         //test
         public ActionResult Browse(int id = 0)
@@ -92,9 +93,21 @@ namespace BookStoreSystem.Areas.BookStoreAreas.Controllers
         //    return View(result.ToList());
         //}
 
-        public ActionResult CustomerProfile()
+        public ActionResult CustomerProfile()    //顧客會員:管理介面(登入成功後跳轉)
+        {
+            if (Request.Cookies["CustomerID"] == null)
+            {
+                return RedirectToAction("CustomerLogin", "Account", new { Area = "BookStoreAreas" });
+            }
+
+            int id = int.Parse(Request.Cookies["CustomerID"].Value);
+            var result= db_Customer.GetByID(id);
+            return View(result);
+        }
+
+        public ActionResult CustomerChangePassword()
         {
             return View();
-        } //Test
+        }
     }
 }

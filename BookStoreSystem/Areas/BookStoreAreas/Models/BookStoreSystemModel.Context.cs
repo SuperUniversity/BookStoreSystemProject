@@ -13,10 +13,10 @@ namespace BookStoreSystem.Areas.BookStoreAreas.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SuperUniversityEntities : DbContext
+    public partial class superuniversityEntities : DbContext
     {
-        public SuperUniversityEntities()
-            : base("name=SuperUniversityEntities")
+        public superuniversityEntities()
+            : base("name=superuniversityEntities")
         {
         }
     

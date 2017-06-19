@@ -18,7 +18,7 @@ namespace BookStoreSystem.Areas.BookStoreAreas.Controllers
         private IRepository_BookStoreSystemModel<Publisher> db_Publisher = new Repository_BookStoreSystemModel<Publisher>();
         private IRepository_BookStoreSystemModel<Author> db_Author = new Repository_BookStoreSystemModel<Author>();
         private IRepository_BookStoreSystemModel<ViewModel_BookInformation> db_vm_BookInformation = new Repository_BookStoreSystemModel<ViewModel_BookInformation>();
-        private SuperUniversityEntities _entity = new SuperUniversityEntities();
+        private superuniversityEntities _entity = new superuniversityEntities();
 
 
         public ActionResult BookIndex() //廠商 觀看自己的上架書單

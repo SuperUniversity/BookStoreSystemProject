@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="SuperUniversityModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="superuniversityModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Author">
     <Key>
       <PropertyRef Name="AuthorID" />
@@ -98,7 +98,7 @@
     <Property Name="SubCategoryName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="MainCategoryID" Type="int" Nullable="false" />
   </EntityType>
-  <EntityContainer Name="SuperUniversityModelStoreContainer">
+  <EntityContainer Name="superuniversityModelStoreContainer">
     <EntitySet Name="Author" EntityType="Self.Author" Schema="BookStore" store:Type="Tables" />
     <EntitySet Name="Book" EntityType="Self.Book" Schema="BookStore" store:Type="Tables" />
     <EntitySet Name="Customer" EntityType="Self.Customer" Schema="BookStore" store:Type="Tables" />

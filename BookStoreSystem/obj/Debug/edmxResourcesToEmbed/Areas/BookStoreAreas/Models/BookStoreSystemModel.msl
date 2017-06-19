@@ -1,109 +1,109 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="SuperUniversityModelStoreContainer" CdmEntityContainer="SuperUniversityEntities">
+  <EntityContainerMapping StorageEntityContainer="superuniversityModelStoreContainer" CdmEntityContainer="superuniversityEntities">
     <EntitySetMapping Name="Author">
-      <EntityTypeMapping TypeName="SuperUniversityModel.Author">
+      <EntityTypeMapping TypeName="superuniversityModel.Author">
         <MappingFragment StoreEntitySet="Author">
-          <ScalarProperty Name="AuthorName" ColumnName="AuthorName" />
           <ScalarProperty Name="AuthorID" ColumnName="AuthorID" />
+          <ScalarProperty Name="AuthorName" ColumnName="AuthorName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Book">
-      <EntityTypeMapping TypeName="SuperUniversityModel.Book">
+      <EntityTypeMapping TypeName="superuniversityModel.Book">
         <MappingFragment StoreEntitySet="Book">
-          <ScalarProperty Name="MainCategoryID" ColumnName="MainCategoryID" />
-          <ScalarProperty Name="BytesImage3" ColumnName="BytesImage3" />
-          <ScalarProperty Name="Image3" ColumnName="Image3" />
-          <ScalarProperty Name="BytesImage2" ColumnName="BytesImage2" />
-          <ScalarProperty Name="Image2" ColumnName="Image2" />
-          <ScalarProperty Name="BytesImage1" ColumnName="BytesImage1" />
-          <ScalarProperty Name="Image1" ColumnName="Image1" />
-          <ScalarProperty Name="OnShelfDate" ColumnName="OnShelfDate" />
-          <ScalarProperty Name="OtherImformation" ColumnName="OtherImformation" />
-          <ScalarProperty Name="AuthorDescription" ColumnName="AuthorDescription" />
-          <ScalarProperty Name="BookDescription" ColumnName="BookDescription" />
-          <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
-          <ScalarProperty Name="ListPrice" ColumnName="ListPrice" />
-          <ScalarProperty Name="Language" ColumnName="Language" />
-          <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
-          <ScalarProperty Name="PublisherID" ColumnName="PublisherID" />
-          <ScalarProperty Name="AuthorID" ColumnName="AuthorID" />
-          <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
-          <ScalarProperty Name="BookName" ColumnName="BookName" />
           <ScalarProperty Name="BookID" ColumnName="BookID" />
+          <ScalarProperty Name="BookName" ColumnName="BookName" />
+          <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+          <ScalarProperty Name="AuthorID" ColumnName="AuthorID" />
+          <ScalarProperty Name="PublisherID" ColumnName="PublisherID" />
+          <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+          <ScalarProperty Name="ListPrice" ColumnName="ListPrice" />
+          <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+          <ScalarProperty Name="BookDescription" ColumnName="BookDescription" />
+          <ScalarProperty Name="AuthorDescription" ColumnName="AuthorDescription" />
+          <ScalarProperty Name="OtherImformation" ColumnName="OtherImformation" />
+          <ScalarProperty Name="OnShelfDate" ColumnName="OnShelfDate" />
+          <ScalarProperty Name="Image1" ColumnName="Image1" />
+          <ScalarProperty Name="BytesImage1" ColumnName="BytesImage1" />
+          <ScalarProperty Name="Image2" ColumnName="Image2" />
+          <ScalarProperty Name="BytesImage2" ColumnName="BytesImage2" />
+          <ScalarProperty Name="Image3" ColumnName="Image3" />
+          <ScalarProperty Name="BytesImage3" ColumnName="BytesImage3" />
+          <ScalarProperty Name="MainCategoryID" ColumnName="MainCategoryID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Customer">
-      <EntityTypeMapping TypeName="SuperUniversityModel.Customer">
+      <EntityTypeMapping TypeName="superuniversityModel.Customer">
         <MappingFragment StoreEntitySet="Customer">
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="BirthDay" ColumnName="BirthDay" />
-          <ScalarProperty Name="IdentityCard" ColumnName="IdentityCard" />
-          <ScalarProperty Name="Gender" ColumnName="Gender" />
-          <ScalarProperty Name="Phone" ColumnName="Phone" />
-          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="Account" ColumnName="Account" />
-          <ScalarProperty Name="NickName" ColumnName="NickName" />
-          <ScalarProperty Name="FullName" ColumnName="FullName" />
           <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="IdentityCard" ColumnName="IdentityCard" />
+          <ScalarProperty Name="BirthDay" ColumnName="BirthDay" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="MainCategory">
-      <EntityTypeMapping TypeName="SuperUniversityModel.MainCategory">
+      <EntityTypeMapping TypeName="superuniversityModel.MainCategory">
         <MappingFragment StoreEntitySet="MainCategory">
-          <ScalarProperty Name="MainCategoryName" ColumnName="MainCategoryName" />
           <ScalarProperty Name="MainCategoryID" ColumnName="MainCategoryID" />
+          <ScalarProperty Name="MainCategoryName" ColumnName="MainCategoryName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Order">
-      <EntityTypeMapping TypeName="SuperUniversityModel.Order">
+      <EntityTypeMapping TypeName="superuniversityModel.Order">
         <MappingFragment StoreEntitySet="Order">
-          <ScalarProperty Name="DeliveryAddress" ColumnName="DeliveryAddress" />
-          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
-          <ScalarProperty Name="ShippingDate" ColumnName="ShippingDate" />
-          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
-          <ScalarProperty Name="RecipientName" ColumnName="RecipientName" />
-          <ScalarProperty Name="OrderState" ColumnName="OrderState" />
-          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
           <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="OrderState" ColumnName="OrderState" />
+          <ScalarProperty Name="RecipientName" ColumnName="RecipientName" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="ShippingDate" ColumnName="ShippingDate" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="DeliveryAddress" ColumnName="DeliveryAddress" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="OrderDetail">
-      <EntityTypeMapping TypeName="SuperUniversityModel.OrderDetail">
+      <EntityTypeMapping TypeName="superuniversityModel.OrderDetail">
         <MappingFragment StoreEntitySet="OrderDetail">
-          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="BookID" ColumnName="BookID" />
-          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
           <ScalarProperty Name="OrderDetailID" ColumnName="OrderDetailID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="BookID" ColumnName="BookID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Publisher">
-      <EntityTypeMapping TypeName="SuperUniversityModel.Publisher">
+      <EntityTypeMapping TypeName="superuniversityModel.Publisher">
         <MappingFragment StoreEntitySet="Publisher">
-          <ScalarProperty Name="PublisherEmail" ColumnName="PublisherEmail" />
-          <ScalarProperty Name="PublisherPhone" ColumnName="PublisherPhone" />
-          <ScalarProperty Name="PublisherAdress" ColumnName="PublisherAdress" />
-          <ScalarProperty Name="PublisherPassword" ColumnName="PublisherPassword" />
-          <ScalarProperty Name="PublisherUserName" ColumnName="PublisherUserName" />
-          <ScalarProperty Name="PublisherName" ColumnName="PublisherName" />
           <ScalarProperty Name="PublisherID" ColumnName="PublisherID" />
+          <ScalarProperty Name="PublisherName" ColumnName="PublisherName" />
+          <ScalarProperty Name="PublisherUserName" ColumnName="PublisherUserName" />
+          <ScalarProperty Name="PublisherPassword" ColumnName="PublisherPassword" />
+          <ScalarProperty Name="PublisherAdress" ColumnName="PublisherAdress" />
+          <ScalarProperty Name="PublisherPhone" ColumnName="PublisherPhone" />
+          <ScalarProperty Name="PublisherEmail" ColumnName="PublisherEmail" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="SubCategory">
-      <EntityTypeMapping TypeName="SuperUniversityModel.SubCategory">
+      <EntityTypeMapping TypeName="superuniversityModel.SubCategory">
         <MappingFragment StoreEntitySet="SubCategory">
-          <ScalarProperty Name="MainCategoryID" ColumnName="MainCategoryID" />
-          <ScalarProperty Name="SubCategoryName" ColumnName="SubCategoryName" />
           <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+          <ScalarProperty Name="SubCategoryName" ColumnName="SubCategoryName" />
+          <ScalarProperty Name="MainCategoryID" ColumnName="MainCategoryID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

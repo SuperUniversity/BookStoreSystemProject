@@ -8,12 +8,12 @@ namespace BookStoreSystem.Areas.BookStoreAreas.Models
 {
     public class Repository_BookStoreSystemModel<T> : IRepository_BookStoreSystemModel<T> where T : class
     {
-        private SuperUniversityEntities DB = null;
+        private superuniversityEntities DB = null;
         private DbSet<T> DBSet = null;
 
         public Repository_BookStoreSystemModel()  //方法同名的建構子
         {
-            DB = new SuperUniversityEntities();
+            DB = new superuniversityEntities();
             DBSet = DB.Set<T>();
         }
         public IEnumerable<T> GetAll()  //讀取全部資料

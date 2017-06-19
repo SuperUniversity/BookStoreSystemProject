@@ -102,8 +102,8 @@
   <ItemGroup>
     <Content Include="Areas\BookStoreAreas\Models\BookStoreSystemModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BookStoreSystemModel.Context.cs</LastGenOutput>
       <DependentUpon>BookStoreSystemModel.edmx</DependentUpon>
+      <LastGenOutput>BookStoreSystemModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Areas\BookStoreAreas\Models\BookStoreSystemModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -129,6 +129,13 @@
     <Content Include="Areas\BookStoreAreas\Views\Account\CustomerRegister.cshtml" />
     <Content Include="Areas\BookStoreAreas\Views\Account\CustomerLogin.cshtml" />
     <Content Include="Areas\BookStoreAreas\Views\Customer\CustomerProfile.cshtml" />
+    <EntityDeploy Include="Areas\BookStoreAreas\Models\BookStoreSystemModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BookStoreSystemModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\BookStoreAreas\Models\BookStoreSystemModel.edmx.diagram">
+      <DependentUpon>BookStoreSystemModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -198,13 +205,6 @@
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Areas\BookStoreAreas\Views\web.config" />
-    <EntityDeploy Include="Areas\BookStoreAreas\Models\BookStoreSystemModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BookStoreSystemModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Areas\BookStoreAreas\Models\BookStoreSystemModel.edmx.diagram">
-      <DependentUpon>BookStoreSystemModel.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\BookStoreAreas\Views\_ViewStart.cshtml" />
     <Content Include="Areas\BookStoreAreas\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\BookStoreAreas\Views\Admin\PublisherIndex.cshtml" />
