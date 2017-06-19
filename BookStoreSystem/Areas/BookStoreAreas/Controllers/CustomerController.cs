@@ -95,6 +95,6 @@ namespace BookStoreSystem.Areas.BookStoreAreas.Controllers
         public ActionResult CustomerProfile()
         {
             return View();
-        }
+        } //Test
     }
 }
