@@ -172,3 +172,4 @@ C:\Users\III\Desktop\BookStoreSystemProject\BookStoreSystem\bin\zh-Hant\System.W
 C:\Users\III\Desktop\BookStoreSystemProject\BookStoreSystem\bin\zh-Hant\System.Web.Mvc.resources.dll
 C:\Users\III\Desktop\BookStoreSystemProject\BookStoreSystem\obj\Debug\BookStoreSystem.dll
 C:\Users\III\Desktop\BookStoreSystemProject\BookStoreSystem\obj\Debug\BookStoreSystem.pdb
+C:\Users\III\Desktop\BookStoreSystemProject\BookStoreSystem\obj\Debug\BookStoreSystem.csprojResolveAssemblyReference.cache
