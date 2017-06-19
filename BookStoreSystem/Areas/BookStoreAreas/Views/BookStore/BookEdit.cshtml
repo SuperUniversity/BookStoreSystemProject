@@ -11,6 +11,7 @@
     @using (Html.BeginForm("BookEdit", "BookStore", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
     {
         @Html.HiddenFor(book => book.BookID)
+        @Html.HiddenFor(book => book.PublisherID)
 
         <div class="form-group">
             @Html.LabelFor(book => book.BookName, new { @class = "col-sm-2 control-label" })

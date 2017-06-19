@@ -109,5 +109,24 @@ namespace BookStoreSystem.Areas.BookStoreAreas.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public ActionResult CustomerEditProfile()    // Get進入→顧客會員:編輯個人資料
+        {
+            if (Request.Cookies["CustomerID"] == null)
+            {
+                return RedirectToAction("CustomerLogin", "Account", new { Area = "BookStoreAreas" });
+            }
+            int id = int.Parse(Request.Cookies["CustomerID"].Value);
+            Customer customer = db_Customer.GetByID(id);
+            return View(customer);
+        }
+
+        [HttpPost]
+        public ActionResult CustomerEditProfile(Customer customer)   // Post進入→顧客會員:更改個人資料
+        {
+            db_Customer.Update(customer);
+            return RedirectToAction("CustomerProfile", "Customer", new { Area = "BookStoreAreas" });
+        }
     }
 }

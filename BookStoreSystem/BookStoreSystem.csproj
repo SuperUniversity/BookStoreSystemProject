@@ -136,6 +136,8 @@
     <Content Include="Areas\BookStoreAreas\Models\BookStoreSystemModel.edmx.diagram">
       <DependentUpon>BookStoreSystemModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\BookStoreAreas\Views\Customer\CustomerChangePassword.cshtml" />
+    <Content Include="Areas\BookStoreAreas\Views\Customer\CustomerEditProfile.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

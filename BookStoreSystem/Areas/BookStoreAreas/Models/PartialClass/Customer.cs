@@ -40,6 +40,7 @@ namespace BookStoreSystem.Areas.BookStoreAreas.Models
             public string IdentityCard { get; set; }
             [DisplayName("出生年月日")]
             [DataType(DataType.Date)]
+            [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
             public Nullable<System.DateTime> BirthDay { get; set; }
             [DisplayName("地址")]
             public string Address { get; set; }

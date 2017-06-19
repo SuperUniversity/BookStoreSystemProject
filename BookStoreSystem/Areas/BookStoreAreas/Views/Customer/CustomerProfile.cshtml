@@ -3,7 +3,6 @@
     ViewBag.Title = "CustomerProfile";
 }
 
-<h2>CustomerProfile</h2>
 <div class="container">
     <h2 style="font-family:'Microsoft JhengHei';font-weight:bold;font-size:24px;"><span style="color:orangered">@HttpUtility.UrlDecode(Request.Cookies["FullName"].Value)</span>/會員管理</h2>
     <hr />
@@ -15,17 +14,13 @@
             {
                 if (int.Parse(Request.Cookies["CustomerID"].Value) > 0)
                 {
-                    @Html.ActionLink("變更密碼", "ChangePassword", "Manager", new { id = Request.Cookies["CustomerID"].Value }, new { })
+                    @Html.ActionLink("變更密碼", "CustomerChangePassword", "Customer", new { id = Request.Cookies["CustomerID"].Value }, new { })
                 }
-                else if (int.Parse(Request.Cookies["CustomerID"].Value) < 0)
+                @*else if (int.Parse(Request.Cookies["CustomerID"].Value) < 0)
                 {
                     @Html.ActionLink("變更密碼", "ChangePassword", "Manager", new { id = Request.Cookies["CustomerID"].Value }, new { })
-                }
+                }*@
 
-            }
-            else
-            {
-                @Html.ActionLink("建立", "SetPassword")
             }
             ]
         </dd>
