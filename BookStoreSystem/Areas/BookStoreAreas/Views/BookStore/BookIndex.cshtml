@@ -42,7 +42,8 @@
                     <td>@Book.Language</td>
                     <td>@string.Format("{0:c0}", Book.ListPrice)</td>
                     <td>@string.Format("{0:c0}", Book.SalePrice)</td>
-                    <td><a href="@Url.Action("BookEdit", "BookStore")" class="btn btn-primary">編輯</a></td>
+                    <td>@Html.ActionLink("編輯", "BookEdit", "BookStore", new { id = Book.BookID }, new { @class = "btn btn-primary" })</td>
+                    <td>@Html.ActionLink("下架","BookDelete","BookStore", new { id=Book.BookID }, new { @class = "btn btn-danger" })</td>
                 </tr>
             }
         </tbody>

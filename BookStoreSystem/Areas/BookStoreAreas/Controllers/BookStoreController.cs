@@ -209,6 +209,13 @@ namespace BookStoreSystem.Areas.BookStoreAreas.Controllers
             //return View();   //Todo..... RedirectToAction會清空所填資料
         }
 
+        public ActionResult BookDelete(int id = 0)
+        {
+                db_Book.Delete(db_Book.GetByID(id));
+                return RedirectToAction("BookIndex");
+        }
+
+
 
         public ActionResult PublisherProfile()    //顧客會員:管理介面(登入成功後跳轉)
         {
