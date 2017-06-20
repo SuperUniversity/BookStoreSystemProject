@@ -117,7 +117,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Areas\BookStoreAreas\Views\Admin\PublisherEdit.cshtml" />
+    <Content Include="Areas\BookStoreAreas\Views\Admin\AdminPublisherEdit.cshtml" />
     <Content Include="Areas\BookStoreAreas\Views\Admin\Index.cshtml" />
     <Content Include="Areas\BookStoreAreas\Views\Admin\Insert.cshtml" />
     <Content Include="Areas\BookStoreAreas\Views\Admin\MainCategories_Partial.cshtml" />
@@ -138,6 +138,9 @@
     </Content>
     <Content Include="Areas\BookStoreAreas\Views\Customer\CustomerChangePassword.cshtml" />
     <Content Include="Areas\BookStoreAreas\Views\Customer\CustomerEditProfile.cshtml" />
+    <Content Include="Areas\BookStoreAreas\Views\Account\PublisherRegister.cshtml" />
+    <Content Include="Areas\BookStoreAreas\Views\Account\PublisherLogin.cshtml" />
+    <Content Include="Areas\BookStoreAreas\Views\BookStore\PublisherProfile.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -198,6 +201,7 @@
     <Compile Include="Areas\BookStoreAreas\ViewModels\ViewModel_BookInfo.cs" />
     <Compile Include="Areas\BookStoreAreas\ViewModels\ViewModel_BookInformation.cs" />
     <Compile Include="Areas\BookStoreAreas\ViewModels\ViewModel_CustomerLogin.cs" />
+    <Compile Include="Areas\BookStoreAreas\ViewModels\ViewModel_PublisherLogin.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -209,7 +213,7 @@
     <Content Include="Areas\BookStoreAreas\Views\web.config" />
     <Content Include="Areas\BookStoreAreas\Views\_ViewStart.cshtml" />
     <Content Include="Areas\BookStoreAreas\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\BookStoreAreas\Views\Admin\PublisherIndex.cshtml" />
+    <Content Include="Areas\BookStoreAreas\Views\Admin\AdminPublisherIndex.cshtml" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />

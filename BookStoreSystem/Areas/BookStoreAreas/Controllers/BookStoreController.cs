@@ -23,11 +23,14 @@ namespace BookStoreSystem.Areas.BookStoreAreas.Controllers
 
         public ActionResult BookIndex() //廠商 觀看自己的上架書單
         {
+            int id = int.Parse(Request.Cookies["PublisherID"].Value);
+
             var result = from book in db_Book.GetAll()                         //Linq語法 join多張Table
                          join author in db_Author.GetAll() on book.AuthorID equals author.AuthorID
                          join subCategory in db_SubCategory.GetAll() on book.SubCategoryID equals subCategory.SubCategoryID
                          join mainCategory in db_MainCategory.GetAll() on subCategory.MainCategoryID equals mainCategory.MainCategoryID
                          join publisher in db_Publisher.GetAll() on book.PublisherID equals publisher.PublisherID
+                         where book.PublisherID==id
                          select new ViewModel_BookInformation
                          {
                              BookID = book.BookID,
@@ -100,9 +103,9 @@ namespace BookStoreSystem.Areas.BookStoreAreas.Controllers
         [HttpPost]
         public ActionResult BookInsert(Book Book,Author Author, MainCategory MainCategory,SubCategory SubCategory, HttpPostedFileBase Image1, HttpPostedFileBase Image2, HttpPostedFileBase Image3)          //Post進入:廠商 新增書本資料
         {
+            Book.PublisherID = int.Parse(Request.Cookies["PublisherID"].Value);
 
-            
-                if (Image1 != null)
+            if (Image1 != null)
                 {
                     string strPath1 = Request.PhysicalApplicationPath + @"Areas/BookStoreAreas/BookImages/" + Image1.FileName;
                     Image1.SaveAs(strPath1);
@@ -165,6 +168,8 @@ namespace BookStoreSystem.Areas.BookStoreAreas.Controllers
         [HttpPost]
         public ActionResult BookEdit(Book Book, Author Author, MainCategory MainCategory, SubCategory SubCategory, HttpPostedFileBase Image1, HttpPostedFileBase Image2, HttpPostedFileBase Image3)
         {
+            Book.PublisherID = int.Parse(Request.Cookies["PublisherID"].Value);
+
             if (Image1 != null)
             {
                 string strPath1 = Request.PhysicalApplicationPath + @"Areas/BookStoreAreas/BookImages/" + Image1.FileName;
@@ -202,7 +207,19 @@ namespace BookStoreSystem.Areas.BookStoreAreas.Controllers
             //return View();
             return RedirectToAction("BookEdit", "BookStore", new { Area = "BookStoreAreas", errorstring = "請至少選擇一張商品圖片" });  //回到 [HttpGet] BookInsert
             //return View();   //Todo..... RedirectToAction會清空所填資料
-            //0616
+        }
+
+
+        public ActionResult PublisherProfile()    //顧客會員:管理介面(登入成功後跳轉)
+        {
+            if (Request.Cookies["PublisherID"] == null)
+            {
+                return RedirectToAction("PublisherLogin", "Account", new { Area = "BookStoreAreas" });
+            }
+
+            int id = int.Parse(Request.Cookies["PublisherID"].Value);
+            var result = db_Publisher.GetByID(id);
+            return View(result);
         }
     }
 }

@@ -7,7 +7,7 @@
 <div class="container">
     <h2>PublisherEdit</h2>
     <hr />
-    @using (Html.BeginForm("PublisherEdit", "Admin", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+    @using (Html.BeginForm("AdminPublisherEdit", "Admin", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
     {
         @Html.HiddenFor(p => p.PublisherID)
         @Html.HiddenFor(p => p.PublisherPassword, new { @Autocomplete = "off" })

@@ -19,35 +19,35 @@ namespace BookStoreSystem.Areas.BookStoreAreas.Controllers
         private IRepository_BookStoreSystemModel<Author> db_Author = new Repository_BookStoreSystemModel<Author>();
         //private SuperUniversityEntities _entity = new SuperUniversityEntities();   //已寫Repository 不直接更動DB
 
-        public ActionResult PublisherIndex()   //後台管理者 觀看廠商名單
+        public ActionResult AdminPublisherIndex()   //後台管理者 觀看廠商名單
         {
             List<Publisher> Publisher = db_Publisher.GetAll().ToList();
             return View(Publisher);
         }
 
         [HttpGet]                                         //Get:後台管理者 修改廠商資料
-        public ActionResult PublisherEdit(int id = 0)
+        public ActionResult AdminPublisherEdit(int id = 0)
         {
             Publisher publisher = db_Publisher.GetByID(id);
             return View(publisher);
         }
 
         [HttpPost]                                         //Post:後台管理者 修改廠商資料
-        public ActionResult PublisherEdit(Publisher publisher)
+        public ActionResult AdminPublisherEdit(Publisher publisher)
         {
             db_Publisher.Update(publisher);
-            return RedirectToAction("PublisherIndex");
+            return RedirectToAction("AdminPublisherIndex");
         }
 
-        public ActionResult PublisherDelete(int id = 0)
+        public ActionResult AdminPublisherDelete(int id = 0)
         {
             DialogResult result = MessageBox.Show("是否確定刪除此筆資料?", "刪除", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 db_Publisher.Delete(db_Publisher.GetByID(id));
-                return RedirectToAction("PublisherIndex");
+                return RedirectToAction("AdminPublisherIndex");
             }
-            return RedirectToAction("PublisherIndex");
+            return RedirectToAction("AdminPublisherIndex");
         }
 
         public ActionResult Index()

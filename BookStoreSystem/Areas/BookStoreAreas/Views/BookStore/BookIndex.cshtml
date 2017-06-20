@@ -8,7 +8,7 @@
 
 <div class="container">
     <h2>商品上架管理</h2>
-    <a href="~/Category/Insert" class="btn btn-primary">新增商品</a>
+    <a href="@Url.Action("BookInsert", "BookStore")" class="btn btn-success">商品上架</a>
     <table class="table table-hover table-striped" id="BookTable">
         <thead>
             <tr>
@@ -22,7 +22,6 @@
                 <th>@Html.DisplayNameFor(b => b.Language)</th>
                 <th>@Html.DisplayNameFor(b => b.ListPrice)</th>
                 <th>@Html.DisplayNameFor(b => b.SalePrice)</th>
-                <th>詳細資訊</th>
                 <th>編輯</th>
                 <th>刪除</th>
             </tr>
@@ -43,7 +42,7 @@
                     <td>@Book.Language</td>
                     <td>@string.Format("{0:c0}", Book.ListPrice)</td>
                     <td>@string.Format("{0:c0}", Book.SalePrice)</td>
-                    @*<td>@Html.ActionLink(new { @class = "btn btn-primary" })</td>*@
+                    <td><a href="@Url.Action("BookEdit", "BookStore")" class="btn btn-primary">編輯</a></td>
                 </tr>
             }
         </tbody>

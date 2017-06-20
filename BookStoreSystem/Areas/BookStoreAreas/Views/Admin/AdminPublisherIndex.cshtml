@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<BookStoreSystem.Areas.BookStoreAreas.Models.Publisher>
 
 @{
-    ViewBag.Title = "PublisherIndex";
+    ViewBag.Title = "AdminPublisherIndex";
 }
 
 @section scripts{
@@ -41,7 +41,7 @@
 }
 
 <div class="container">
-    <h2>PublisherIndex</h2>
+    <h2>AdminPublisherIndex</h2>
     <div class="row">
 
         <div class="col-lg-9">
@@ -69,8 +69,8 @@
                             <td class="addr">@Publisher.PublisherAdress</td>
                             <td>@Publisher.PublisherPhone</td>
                             <td>@Publisher.PublisherEmail</td>
-                            <td>@Html.ActionLink("編輯", "PublisherEdit", "Admin", new { id = Publisher.PublisherID }, new { @class = "btn btn-primary" })</td>
-                            <td>@Html.ActionLink("刪除", "PublisherDelete", "Admin", new { id = Publisher.PublisherID }, new { @class = "btn btn-danger" })</td>
+                            <td>@Html.ActionLink("編輯", "AdminPublisherEdit", "Admin", new { id = Publisher.PublisherID }, new { @class = "btn btn-primary" })</td>
+                            <td>@Html.ActionLink("刪除", "AdminPublisherDelete", "Admin", new { id = Publisher.PublisherID }, new { @class = "btn btn-danger" })</td>
                         </tr>
                     }
                 </tbody>
