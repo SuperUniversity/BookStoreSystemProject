@@ -37,6 +37,7 @@ namespace BookStoreSystem.Areas.BookStoreAreas.Controllers
                                  join publisher in db_Publisher.GetAll() on book.PublisherID equals publisher.PublisherID
                                  select new ViewModel_BookInformation
                                  {
+                                     BookID =  book.BookID,
                                      BookName = book.BookName,
                                      AuthorName = author.AuthorName,
                                      SubCategoryName = subCategory.SubCategoryName,
@@ -55,6 +56,8 @@ namespace BookStoreSystem.Areas.BookStoreAreas.Controllers
                          join publisher in db_Publisher.GetAll() on book.PublisherID equals publisher.PublisherID
                          select new ViewModel_BookInformation
                          {
+                             BookID = book.BookID,
+
                              BookName = book.BookName,
                              AuthorName = author.AuthorName,
                              SubCategoryName = subCategory.SubCategoryName,
@@ -101,14 +104,14 @@ namespace BookStoreSystem.Areas.BookStoreAreas.Controllers
             }
 
             int id = int.Parse(Request.Cookies["CustomerID"].Value);
-            var result= db_Customer.GetByID(id);
+            var result = db_Customer.GetByID(id);
             return View(result);
         }
 
         [HttpGet]
         public ActionResult CustomerChangePassword()  //Get進入→顧客會員:修改密碼
         {
-            if(Request.Cookies["CustomerID"] == null)
+            if (Request.Cookies["CustomerID"] == null)
             {
                 return RedirectToAction("CustomerLogin", "Account", new { Area = "BookStoreAreas" });
             }
@@ -142,6 +145,27 @@ namespace BookStoreSystem.Areas.BookStoreAreas.Controllers
         {
             db_Customer.Update(customer);
             return RedirectToAction("CustomerProfile", "Customer", new { Area = "BookStoreAreas" });
+        }
+
+
+
+        public ActionResult GetBookImage1(int id = 1)   //讀取商品圖片1
+        {
+            Book book = db_Book.GetByID(id);
+            byte[] img = book.BytesImage1;
+            return File(img, "image/jpeg");
+        }
+        public ActionResult GetBookImage2(int id = 1)   //讀取商品圖片2
+        {
+            Book book = db_Book.GetByID(id);
+            byte[] img = book.BytesImage2;
+            return File(img, "image/jpeg");
+        }
+        public ActionResult GetBookImage3(int id = 1)   //讀取商品圖片3
+        {
+            Book book = db_Book.GetByID(id);
+            byte[] img = book.BytesImage3;
+            return File(img, "image/jpeg");
         }
     }
 }

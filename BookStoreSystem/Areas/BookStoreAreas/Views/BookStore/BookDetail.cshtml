@@ -1,0 +1,52 @@
+﻿@model IEnumerable<BookStoreSystem.Areas.BookStoreAreas.ViewModels.ViewModel_BookInformation>
+
+@{
+    ViewBag.Title = "BookDetail";
+}
+
+<div class="container">
+    <div class="row">
+        <div  style="position:inherit">
+            <div>
+                <p style="font-family:'Microsoft JhengHei';font-weight:bold;font-size:24px"><span style="color:orangered">商品</span>簡介</p>
+                <hr />
+                <div>
+                    @foreach (var book in Model)
+                    {
+                        if (book.BytesImage1 != null)
+                        {
+                            <div class="col-lg-4 padFix bigimg imageback"style="margin:10px">
+                                <span class="photo_b">
+                                    <img src="@Url.Action("GetBookImage1","Customer")" style="width:400px;height:400px" />
+                                </span>
+                            </div>
+                        }
+                        if (book.BytesImage2 != null)
+                        {
+                            <div class="col-lg-4 padFix bigimg imageback"style="margin:10px">
+                                <span class="photo_b">
+                                    <img src="@Url.Action("GetBookImage2","Customer")" style="width:190px;height:190px" />
+                                </span>
+                            </div>
+                        }
+                        if (book.BytesImage3 != null)
+                        {
+                            <div class="col-lg-4 padFix bigimg imageback"style="margin:10px">
+                                <span class="photo_b">
+                                    <img src="@Url.Action("GetBookImage3","Customer")" style="width:190px;height:190px" />
+                                </span>
+                            </div>
+                        }
+                        break;
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6" style="position:inherit">
+            @*<p>@Html.DisplayFor(book=>book.)</p>*@
+        </div>
+        <div class="col-md-2" style="position:inherit">
+
+        </div>
+    </div>
+</div>

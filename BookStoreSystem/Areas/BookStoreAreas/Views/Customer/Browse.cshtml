@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<BookStoreSystem.Areas.BookStoreAreas.ViewModels.ViewModel_BookInformation>
-@using BookStoreSystem.Areas.BookStoreAreas.Models;
+@using BookStoreSystem.Areas.BookStoreAreas.ViewModels;
 
 
 
@@ -21,9 +21,9 @@
                 {
                     <div class="col-sm-4 col-md-4 col-lg-2">
                         <div class="thumbnail">
-
+                            <img src="@Url.Action("GetBookImage1","Customer",new { id= book.BookID })" />
                             <div class="caption">
-                                <strong class="strong">@book.BookName</strong>
+                                <strong class="strong" style="font-size:18px;font-family:'Microsoft JhengHei';font-weight:bold;color:red">@book.BookName</strong>
                                 <hr />
                                 <p>@Html.DisplayNameFor(b => b.AuthorName) : @Html.DisplayFor(b => book.AuthorName)</p>
                                 <p>@Html.DisplayNameFor(b => b.SubCategoryName) : @Html.DisplayFor(b => book.SubCategoryName)</p>

@@ -141,6 +141,7 @@
     <Content Include="Areas\BookStoreAreas\Views\Account\PublisherRegister.cshtml" />
     <Content Include="Areas\BookStoreAreas\Views\Account\PublisherLogin.cshtml" />
     <Content Include="Areas\BookStoreAreas\Views\BookStore\PublisherProfile.cshtml" />
+    <Content Include="Areas\BookStoreAreas\Views\BookStore\BookDetail.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
