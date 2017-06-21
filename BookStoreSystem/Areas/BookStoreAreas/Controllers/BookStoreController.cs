@@ -232,9 +232,11 @@ namespace BookStoreSystem.Areas.BookStoreAreas.Controllers
         {
             if (id != 0)
             {
-                var resultByID = from book in db_Book.GetAll().Where(b => b.SubCategoryID == id)
+                ViewBag.bid = id;
+                var resultByID = from book in db_Book.GetAll()
                                  join author in db_Author.GetAll() on book.AuthorID equals author.AuthorID
                                  join subCategory in db_SubCategory.GetAll() on book.SubCategoryID equals subCategory.SubCategoryID
+                                 join mainCategory in db_MainCategory.GetAll() on subCategory.MainCategoryID equals mainCategory.MainCategoryID
                                  join publisher in db_Publisher.GetAll() on book.PublisherID equals publisher.PublisherID
                                  where book.BookID ==id 
                                  select  new ViewModel_BookInformation
@@ -242,8 +244,15 @@ namespace BookStoreSystem.Areas.BookStoreAreas.Controllers
                                      BookID = book.BookID,
                                      BookName = book.BookName,
                                      AuthorName = author.AuthorName,
+                                     MainCategoryName = mainCategory.MainCategoryName,
                                      SubCategoryName = subCategory.SubCategoryName,
                                      PublisherName = publisher.PublisherName,
+                                     Language = book.Language,
+                                     BookDescription = book.BookDescription,
+                                     AuthorDescription = book.AuthorDescription,
+                                     OtherImformation = book.OtherImformation,
+                                     PublishDate = book.PublishDate,
+                                     OnShelfDate = book.OnShelfDate,
                                      ListPrice = book.ListPrice,
                                      SalePrice = book.SalePrice,
                                      BytesImage1 =book.BytesImage1,
@@ -251,31 +260,39 @@ namespace BookStoreSystem.Areas.BookStoreAreas.Controllers
                                      BytesImage3 = book.BytesImage3
                                  };
 
-                return View(resultByID);
+                return View(resultByID.ToList().First());
 
             }
-
+            //ViewBag.bid = id;
             var result = from book in db_Book.GetAll()
-                         join author in db_Author.GetAll() on book.AuthorID equals author.AuthorID
-                         join subCategory in db_SubCategory.GetAll() on book.SubCategoryID equals subCategory.SubCategoryID
-                         join publisher in db_Publisher.GetAll() on book.PublisherID equals publisher.PublisherID
-                         select new ViewModel_BookInformation
-                         {
-                             BookID = book.BookID,
-                             BookName = book.BookName,
-                             AuthorName = author.AuthorName,
-                             SubCategoryName = subCategory.SubCategoryName,
-                             PublisherName = publisher.PublisherName,
-                             ListPrice = book.ListPrice,
-                             SalePrice = book.SalePrice,
-                             BytesImage1 = book.BytesImage1,
-                             BytesImage2 = book.BytesImage2,
-                             BytesImage3 = book.BytesImage3
-                         };
-            ////ViewBag.image1 = db_Book.GetByID(id).BytesImage1;
-            ////ViewBag.image2 = db_Book.GetByID(id).BytesImage2;
-            ////ViewBag.image3 = db_Book.GetByID(id).BytesImage3;
-            return View(result.ToList());
+                             join author in db_Author.GetAll() on book.AuthorID equals author.AuthorID
+                             join subCategory in db_SubCategory.GetAll() on book.SubCategoryID equals subCategory.SubCategoryID
+                             join mainCategory in db_MainCategory.GetAll() on subCategory.MainCategoryID equals mainCategory.MainCategoryID
+                             join publisher in db_Publisher.GetAll() on book.PublisherID equals publisher.PublisherID
+                             where book.BookID == id
+                             select new ViewModel_BookInformation
+                             {
+                                 BookID = book.BookID,
+                                 BookName = book.BookName,
+                                 AuthorName = author.AuthorName,
+                                 MainCategoryName = mainCategory.MainCategoryName,
+                                 SubCategoryName = subCategory.SubCategoryName,
+                                 PublisherName = publisher.PublisherName,
+                                 Language = book.Language,
+                                 BookDescription = book.BookDescription,
+                                 AuthorDescription = book.AuthorDescription,
+                                 OtherImformation =book.OtherImformation,
+                                 PublishDate = book.PublishDate,
+                                 OnShelfDate = book.OnShelfDate,
+                                 ListPrice = book.ListPrice,
+                                 SalePrice = book.SalePrice,
+                                 BytesImage1 = book.BytesImage1,
+                                 BytesImage2 = book.BytesImage2,
+                                 BytesImage3 = book.BytesImage3
+                             };
+
+
+            return View(result.ToList().First());
 
         }
 
